@@ -1,0 +1,52 @@
+# Terraform Init
+Initializing the backend...
+
+Initializing provider plugins...
+- Finding kreuzwerker/docker versions matching "~> 3.0.2"...
+- Installing kreuzwerker/docker v3.0.2...
+- Installed kreuzwerker/docker v3.0.2 (signed by HashiCorp)
+
+Terraform has been successfully initialized!
+
+---
+
+# Terraform Plan
+Terraform will perform the following actions:
+
+  # docker_container.nginx_container will be created
+  + resource "docker_container" "nginx_container" {
+      ...
+    }
+
+  # docker_image.nginx_image will be created
+  + resource "docker_image" "nginx_image" {
+      name = "nginx:latest"
+    }
+
+Plan: 2 to add, 0 to change, 0 to destroy.
+
+---
+
+# Terraform Apply
+docker_image.nginx_image: Creating...
+docker_image.nginx_image: Creation complete
+docker_container.nginx_container: Creating...
+docker_container.nginx_container: Creation complete
+
+Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
+
+---
+
+# Terraform State List
+docker_image.nginx_image
+docker_container.nginx_container
+
+---
+
+# Terraform Destroy
+docker_container.nginx_container: Destroying...
+docker_container.nginx_container: Destruction complete
+docker_image.nginx_image: Destroying...
+docker_image.nginx_image: Destruction complete
+
+Destroy complete! Resources: 2 destroyed.
